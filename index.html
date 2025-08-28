@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珊珊的世界</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* 备用字体确保在本地也能正常显示 */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Microsoft YaHei', sans-serif;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- 背景容器 -->
+    <div class="background-container">
+        <div class="hero-image"></div>
+        <div class="grain-overlay"></div>
+    </div>
+    
+    <!-- 主容器 -->
+    <div class="home-container">
+        <div class="content-wrapper">
+            <!-- 动态标题 -->
+            <h1 class="animated-title">
+                <span class="char">欢</span>
+                <span class="char">迎</span>
+                <span class="char">来</span>
+                <span class="char">到</span>
+                <span class="char">珊</span>
+                <span class="char">珊</span>
+                <span class="char">的</span>
+                <span class="char">世</span>
+                <span class="char">界</span>
+            </h1>
+            
+            <!-- 探索按钮 -->
+            <button class="explore-btn" onclick="navigateToGallery()">
+                开始探索
+            </button>
+        </div>
+    </div>
+    
+    <script src="assets/js/home-transition.js"></script>
+</body>
+</html> 

@@ -1,0 +1,520 @@
+/* ===== 响应式设计 ===== */
+
+/* 大屏桌面 (≥1200px) - 默认样式已在main.css中定义 */
+
+/* 平板 (901px - 1199px) */
+@media (max-width: 1199px) and (min-width: 901px) {
+    .carousel-container {
+        height: 50vw;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(3, 180px) repeat(2, 180px);
+        grid-template-rows: repeat(2, 240px);
+        gap: 20px;
+        max-width: 600px;
+    }
+    
+    .category-card {
+        width: 180px;
+        height: 240px;
+        padding: 20px 15px;
+    }
+    
+    .card-icon {
+        font-size: 40px;
+    }
+    
+    .card-title {
+        font-size: 16px;
+    }
+    
+    .card-description {
+        font-size: 13px;
+    }
+    
+    .animated-title {
+        font-size: 96px;
+    }
+    
+    .gallery-title {
+        font-size: 26px;
+    }
+}
+
+/* 小屏平板/大手机 (601px - 900px) */
+@media (max-width: 900px) and (min-width: 601px) {
+    .carousel-container {
+        width: 85vw;
+        height: 51vw;
+        min-height: 250px;
+    }
+    
+    .cards-grid {
+        grid-template-columns: repeat(2, 200px);
+        gap: 25px;
+        margin: 30px 0;
+    }
+    
+    .category-card {
+        width: 200px;
+        height: 260px;
+        padding: 25px 18px;
+    }
+    
+    .card-icon {
+        font-size: 42px;
+    }
+    
+    .animated-title {
+        font-size: 84px;
+        margin-bottom: 35px;
+    }
+    
+    .gallery-title {
+        font-size: 24px;
+    }
+    
+    .social-bar {
+        gap: 30px;
+    }
+    
+    .gallery-container {
+        padding: 30px 15px;
+        gap: 40px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 15px;
+    }
+}
+
+/* 手机 (≤600px) */
+@media (max-width: 600px) {
+    .carousel-container {
+        width: 90vw;
+        height: 60vw;
+        min-height: 200px;
+    }
+    
+    .cards-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        margin: 25px 0;
+        max-width: 300px;
+    }
+    
+    .category-card {
+        width: 85vw;
+        height: 120px;
+        max-width: 300px;
+        padding: 15px 20px;
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+    }
+    
+    .card-icon {
+        font-size: 36px;
+        margin-right: 15px;
+        flex-shrink: 0;
+    }
+    
+    .card-content {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        flex: 1;
+    }
+    
+    .card-title {
+        font-size: 16px;
+        margin: 0;
+    }
+    
+    .card-description {
+        font-size: 12px;
+        line-height: 1.3;
+    }
+    
+    .animated-title {
+        font-size: 72px;
+        margin-bottom: 30px;
+    }
+    
+    .gallery-title {
+        font-size: 22px;
+    }
+    
+    .explore-btn {
+        padding: 12px 28px;
+        font-size: 15px;
+    }
+    
+    .social-bar {
+        gap: 20px;
+        padding: 20px;
+        height: auto;
+        flex-direction: column;
+    }
+    
+    .social-link {
+        width: 100%;
+        max-width: 300px;
+        justify-content: center;
+        font-size: 14px;
+        padding: 16px 24px;
+    }
+    
+    .social-icon {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .gallery-container {
+        padding: 20px 10px;
+        gap: 30px;
+    }
+    
+    .modal-content {
+        width: 95vw;
+        height: 95vh;
+    }
+    
+    .modal-body {
+        padding: 15px;
+        height: calc(95vh - 48px);
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+    }
+    
+    .lightbox-nav.prev {
+        left: -60px;
+    }
+    
+    .lightbox-nav.next {
+        right: -60px;
+    }
+    
+    .lightbox-close {
+        top: -40px;
+        right: 10px;
+    }
+    
+    .carousel-nav {
+        width: 35px;
+        height: 35px;
+        font-size: 16px;
+    }
+    
+    .carousel-nav.prev {
+        left: 10px;
+    }
+    
+    .carousel-nav.next {
+        right: 10px;
+    }
+    
+    .carousel-indicators {
+        bottom: 15px;
+    }
+}
+
+/* 超小屏 (≤400px) */
+@media (max-width: 400px) {
+    .animated-title {
+        font-size: 60px;
+    }
+    
+    .category-card {
+        width: 90vw;
+        height: 100px;
+        padding: 12px 15px;
+    }
+    
+    .card-icon {
+        font-size: 30px;
+        margin-right: 12px;
+    }
+    
+    .card-title {
+        font-size: 14px;
+    }
+    
+    .card-description {
+        font-size: 11px;
+    }
+    
+    .explore-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+    
+    .carousel-container {
+        height: 65vw;
+    }
+    
+    .social-link {
+        font-size: 13px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+    
+    .lightbox-nav.prev {
+        left: 10px;
+    }
+    
+    .lightbox-nav.next {
+        right: 10px;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+}
+
+/* 高度较小的屏幕优化 */
+@media (max-height: 600px) {
+    .home-container {
+        min-height: 100vh;
+        padding: 20px 0;
+    }
+    
+    .animated-title {
+        margin-bottom: 25px;
+    }
+    
+    .gallery-container {
+        gap: 30px;
+    }
+}
+
+/* 横屏手机优化 */
+@media (max-height: 500px) and (max-width: 900px) {
+    .carousel-container {
+        height: 40vh;
+        max-height: 200px;
+    }
+    
+    .animated-title {
+        font-size: 54px;
+        margin-bottom: 20px;
+    }
+    
+    .category-card {
+        height: 80px;
+        padding: 10px 15px;
+    }
+    
+    .card-icon {
+        font-size: 24px;
+        margin-right: 10px;
+    }
+    
+    .modal-content {
+        width: 98vw;
+        height: 90vh;
+    }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+    .carousel-nav {
+        opacity: 0.7;
+    }
+    
+    .category-card:hover {
+        transform: none;
+    }
+    
+    .category-card:active {
+        transform: translateY(-3px);
+        transition: transform 0.1s;
+    }
+    
+    .explore-btn:hover {
+        transform: none;
+    }
+    
+    .explore-btn:active {
+        transform: scale(0.98);
+    }
+    
+    .media-item:hover {
+        transform: none;
+    }
+    
+    .media-item:active {
+        transform: scale(0.98);
+    }
+    
+    /* 手机端确保触摸区域足够大 */
+    .carousel-nav {
+        min-width: 44px;
+        min-height: 44px;
+    }
+    
+    .indicator {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .indicator::before {
+        content: '';
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: rgba(62, 62, 62, 0.3);
+        transition: background 0.3s ease;
+    }
+    
+    .indicator.active::before {
+        background: var(--accent-mint);
+    }
+}
+
+/* 打印优化 */
+@media print {
+    .background-container,
+    .carousel-nav,
+    .social-bar,
+    .modal-overlay {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    .category-card {
+        background: white !important;
+        border: 1px solid #ccc !important;
+        box-shadow: none !important;
+    }
+}
+
+/* 高对比度模式 */
+@media (prefers-contrast: high) {
+    :root {
+        --text-primary: #000000;
+        --text-secondary: #333333;
+        --bg-primary: #FFFFFF;
+        --bg-secondary: #F0F0F0;
+        --shadow-color: rgba(0, 0, 0, 0.3);
+    }
+    
+    .category-card {
+        border: 2px solid var(--text-primary);
+    }
+    
+    .explore-btn {
+        border: 2px solid var(--text-primary);
+    }
+} 
+
+/* 响应式调整 */
+@media screen and (max-width: 1400px) {
+    .animated-title {
+        font-size: 112px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 220px);
+    }
+    .animated-title {
+        font-size: 96px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 220px);
+    }
+    
+    .carousel-container {
+        height: 50vw;
+    }
+    
+    .animated-title {
+        font-size: 84px;
+        letter-spacing: 0.01em;
+    }
+    
+    .explore-btn {
+        padding: 18px 42px;
+        font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cards-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .carousel-container {
+        height: 60vw;
+    }
+    
+    .social-bar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+    
+    .social-link {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .animated-title {
+        font-size: 64px;
+        margin-bottom: 40px;
+    }
+    
+    .explore-btn {
+        padding: 16px 36px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .animated-title {
+        font-size: 48px;
+    }
+}
+
+/* 处理较小高度的屏幕 */
+@media screen and (max-height: 600px) {
+    .animated-title {
+        font-size: 72px;
+        margin-bottom: 30px;
+    }
+    
+    .explore-btn {
+        padding: 14px 32px;
+        font-size: 18px;
+    }
+} 

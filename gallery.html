@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>珊珊的作品集</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+</head>
+<body>
+    <!-- 背景容器 -->
+    <div class="background-container">
+        <div class="hero-image"></div>
+        <div class="grain-overlay"></div>
+    </div>
+    
+    <!-- 画廊容器 -->
+    <div class="gallery-container">
+        <!-- 页面标题 -->
+        <h2 class="gallery-title">珊珊的小世界</h2>
+        
+        <!-- 轮播图区域 -->
+        <div class="carousel-container">
+            <div class="carousel-wrapper">
+                <div class="carousel-slide active">
+                    <img src="assets/images/carousel/IMG_20250816_194758.jpg" alt="珊珊的摄影作品1" />
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/images/carousel/IMG_20250816_194728.jpg" alt="珊珊的摄影作品2" />
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/images/carousel/IMG_20250813_193802.jpg" alt="珊珊的摄影作品3" />
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/images/carousel/IMG_20250813_194159.jpg" alt="珊珊的摄影作品4" />
+                </div>
+                <div class="carousel-slide">
+                    <img src="assets/images/carousel/IMG_20250405_190539.jpg" alt="珊珊的摄影作品5" />
+                </div>
+            </div>
+            
+            <!-- 导航按钮 -->
+            <button class="carousel-nav prev" onclick="changeSlide(-1)">‹</button>
+            <button class="carousel-nav next" onclick="changeSlide(1)">›</button>
+            
+            <!-- 指示器 -->
+            <div class="carousel-indicators">
+                <div class="indicator active" onclick="goToSlide(0)"></div>
+                <div class="indicator" onclick="goToSlide(1)"></div>
+                <div class="indicator" onclick="goToSlide(2)"></div>
+                <div class="indicator" onclick="goToSlide(3)"></div>
+                <div class="indicator" onclick="goToSlide(4)"></div>
+            </div>
+        </div>
+        
+        <!-- 五大卡片 -->
+        <div class="cards-grid">
+            <div class="category-card" onclick="openModal('human')">
+                <div class="card-icon">👤</div>
+                <div class="card-content">
+                    <h3 class="card-title">人文</h3>
+                    <p class="card-description">记录生活中的美好瞬间，感受人间烟火气</p>
+                </div>
+            </div>
+            
+            <div class="category-card" onclick="openModal('research')">
+                <div class="card-icon">🔬</div>
+                <div class="card-content">
+                    <h3 class="card-title">科研</h3>
+                    <p class="card-description">探索未知的学术领域，记录研究的点点滴滴</p>
+                </div>
+            </div>
+            
+            <div class="category-card" onclick="openModal('life')">
+                <div class="card-icon">🌱</div>
+                <div class="card-content">
+                    <h3 class="card-title">生活</h3>
+                    <p class="card-description">日常的小确幸，平凡中的不平凡</p>
+                </div>
+            </div>
+            
+            <div class="category-card" onclick="openModal('hobby')">
+                <div class="card-icon">🎨</div>
+                <div class="card-content">
+                    <h3 class="card-title">爱好</h3>
+                    <p class="card-description">兴趣使然，热爱让生活更加精彩</p>
+                </div>
+            </div>
+            
+            <div class="category-card" onclick="openModal('food')">
+                <div class="card-icon">🍜</div>
+                <div class="card-content">
+                    <h3 class="card-title">美食</h3>
+                    <p class="card-description">舌尖上的旅行，品味人生百味</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 底部社交栏 -->
+        <div class="social-bar">
+            <a href="https://v.douyin.com/lqZfxQIH7tg" class="social-link douyin" target="_blank">
+                <span class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M368.07,0h-79.84c-1.74,73.43-31.15,113.09-91.47,120v83.41c32.4-3.42,58.18-15.8,78.65-36.51v168c0,97.26-79.07,176.33-176.33,176.33S22.75,432.17,22.75,334.91,101.82,158.58,199.08,158.58v-84C89.18,74.58,0,163.76,0,273.66,0,383.57,89.18,472.75,199.08,472.75S398.17,383.57,398.17,273.66V166.33c34.31,24.73,74.82,38.9,113.83,38.9V121.39C469.93,121.39,408.33,83.5,368.07,0Z"/>
+                    </svg>
+                </span>
+                <span>@杉杉不迟到</span>
+            </a>
+            <a href="https://www.xiaohongshu.com/collection/item/68afbc3d0165000000000001?xhsshare=CopyLink&appuid=61cb29f6000000001000ccf1&apptime=1756348046" class="social-link xiaohongshu" target="_blank">
+                <span class="social-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                        <path d="M256,0C114.84,0,0,114.84,0,256S114.84,512,256,512,512,397.16,512,256,397.16,0,256,0ZM388.75,347.52c0,11.76-9.6,21.36-21.36,21.36H144.61c-11.76,0-21.36-9.6-21.36-21.36V164.48c0-11.76,9.6-21.36,21.36-21.36h222.78c11.76,0,21.36,9.6,21.36,21.36Zm-52.8-146.88H176.05c-5.88,0-10.68,4.8-10.68,10.68v89.76c0,5.88,4.8,10.68,10.68,10.68h159.9c5.88,0,10.68-4.8,10.68-10.68V211.32C346.63,205.44,341.83,200.64,335.95,200.64Z"/>
+                    </svg>
+                </span>
+                <span>@蓁蓁</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- 模态框 -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle">文件夹标题</h3>
+                <button class="close-btn" onclick="closeModal()">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="masonry-grid" id="masonryGrid">
+                    <!-- 动态加载内容 -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/gallery-carousel.js"></script>
+    <script src="assets/js/modal-gallery.js"></script>
+</body>
+</html> 
