@@ -63,8 +63,8 @@ const mediaData = {
             { type: 'image', src: 'assets/images/folders/life/4831f8ddec2125e832f5278896ce841b.JPG', alt: '生活日常' },
             { type: 'image', src: 'assets/images/folders/life/08d46b76a86b0ad1aa95493629a3be0e.JPG', alt: '美好时光' },
             { type: 'image', src: 'assets/images/folders/life/0c1d9ff09dbb4952c36300c1b8b0515a.JPG', alt: '生活记录' },
-            { type: 'image', src: 'assets/images/folders/life/130823325f6b2dda85d72087029a91f6.JPG', alt: '日常点滴' },
-            { type: 'image', src: 'assets/images/folders/life/c27380bab7b62ab4bd2d7e19213e6460.JPG', alt: '生活瞬间' },
+
+
             { type: 'image', src: 'assets/images/folders/life/a8c2dd16b3eea23a9b99442b11330683.JPG', alt: '温馨时刻' },
             { type: 'image', src: 'assets/images/folders/life/3228ab7736ac3d21969a3bbca02f8cce.JPG', alt: '日常生活' },
             { type: 'image', src: 'assets/images/folders/life/29927c69f185dca34647cde079ff8140.JPG', alt: '生活剪影' },
