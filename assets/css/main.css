@@ -100,7 +100,7 @@ body {
 }
 
 .animated-title {
-    font-size: 176px;
+    font-size: 6vw;  /* 进一步减小字体大小 */
     font-weight: 700;
     margin-bottom: 60px;
     font-family: "Microsoft YaHei", "微软雅黑", sans-serif;
@@ -143,8 +143,8 @@ body {
     background: rgba(255, 255, 255, 0.9);
     border: none;
     border-radius: var(--radius-large);
-    padding: 40px 96px;  /* 内边距翻倍 */
-    font-size: 48px;    /* 字体大小翻倍 */
+    padding: 1.2vw 3vw;  /* 进一步减小内边距 */
+    font-size: 1.5vw;   /* 进一步减小字体大小 */
     font-weight: 500;
     color: var(--text-primary);
     cursor: pointer;
