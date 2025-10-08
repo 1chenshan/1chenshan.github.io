@@ -63,8 +63,6 @@ const mediaData = {
             { type: 'image', src: 'assets/images/folders/life/4831f8ddec2125e832f5278896ce841b.JPG', alt: '生活日常' },
             { type: 'image', src: 'assets/images/folders/life/08d46b76a86b0ad1aa95493629a3be0e.JPG', alt: '美好时光' },
             { type: 'image', src: 'assets/images/folders/life/0c1d9ff09dbb4952c36300c1b8b0515a.JPG', alt: '生活记录' },
-
-
             { type: 'image', src: 'assets/images/folders/life/a8c2dd16b3eea23a9b99442b11330683.JPG', alt: '温馨时刻' },
             { type: 'image', src: 'assets/images/folders/life/3228ab7736ac3d21969a3bbca02f8cce.JPG', alt: '日常生活' },
             { type: 'image', src: 'assets/images/folders/life/29927c69f185dca34647cde079ff8140.JPG', alt: '生活剪影' },
@@ -83,8 +81,20 @@ const mediaData = {
             { type: 'video', src: 'assets/videos/folders/life/30dbe9dafb52e0ec1dc1716c255edfee.MOV', poster: 'assets/images/folders/life/3b1ee2623a36e76f0dcd461b704f7b68.JPG', alt: '生活视频' },
             { type: 'image', src: 'assets/images/folders/life/b9359c5a97a06f578304be9cfe7251ee.JPG', alt: '日常时光' },
             { type: 'image', src: 'assets/images/folders/life/39a2f1f0dcc73238daf74b481dbd8ff0.JPG', alt: '生活点滴' },
-            { type: 'image', src: 'assets/images/folders/life/cb06a42d81cc864d3e259bbb5ac5e6d1.JPG', alt: '日常剪影' },
-            { type: 'image', src: 'assets/images/folders/life/39a3ac7769d678f4ddf02e59f85c9a54.JPG', alt: '生活画面' }
+            { type: 'image', src: 'assets/images/folders/life/39a3ac7769d678f4ddf02e59f85c9a54.JPG', alt: '生活画面' },
+            { type: 'image', src: 'assets/images/folders/life/2227d92ef4d3f4587b09e98c037acaee.JPG', alt: '生活瞬间' },
+            { type: 'image', src: 'assets/images/folders/life/40107ef6fcf42c059e25fc22a0375795.JPG', alt: '生活记录' },
+            { type: 'image', src: 'assets/images/folders/life/56952a4d8a5db1c5c3fdf97a6db3e4f1.JPG', alt: '生活剪影' },
+            { type: 'image', src: 'assets/images/folders/life/8338b03652488b55163613061599466a.JPG', alt: '生活故事' },
+            { type: 'image', src: 'assets/images/folders/life/972b6baaef1d704e4ddbb03f6ec6bc0f.JPG', alt: '生活记忆' },
+            { type: 'image', src: 'assets/images/folders/life/9b28bb4d87f043febc05f66bd26dce49.JPG', alt: '生活印象' },
+            { type: 'image', src: 'assets/images/folders/life/a66b961c89810c2a149b755ffa72faf7.JPG', alt: '生活时光' },
+            { type: 'image', src: 'assets/images/folders/life/a78b8f3e6af87d44103867c1c475f35e.JPG', alt: '生活点滴' },
+            { type: 'image', src: 'assets/images/folders/life/aaafd1b5b70e10c3dee0393375a9880f.JPG', alt: '生活画面' },
+            { type: 'image', src: 'assets/images/folders/life/aee6964a98bf11cb68b41fac266eebef.JPG', alt: '生活记录' },
+            { type: 'image', src: 'assets/images/folders/life/bc91ff5e1270bdf3390ca5a1e61577a0.JPG', alt: '生活故事' },
+            { type: 'image', src: 'assets/images/folders/life/e4be8c7bcb24f4a536b3aa8c068f4614.JPG', alt: '生活记忆' },
+            { type: 'image', src: 'assets/images/folders/life/fda66c3a87a024aab75dea4d38eafb45.JPG', alt: '生活印象' }
         ]
     },
     hobby: {
