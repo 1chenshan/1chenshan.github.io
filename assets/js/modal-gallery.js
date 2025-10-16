@@ -92,8 +92,7 @@ const mediaData = {
             { type: 'image', src: 'assets/images/folders/life/aaafd1b5b70e10c3dee0393375a9880f.JPG', alt: '生活画面' },
             { type: 'image', src: 'assets/images/folders/life/aee6964a98bf11cb68b41fac266eebef.JPG', alt: '生活记录' },
             { type: 'image', src: 'assets/images/folders/life/bc91ff5e1270bdf3390ca5a1e61577a0.JPG', alt: '生活故事' },
-            { type: 'image', src: 'assets/images/folders/life/e4be8c7bcb24f4a536b3aa8c068f4614.JPG', alt: '生活记忆' },
-            { type: 'image', src: 'assets/images/folders/life/fda66c3a87a024aab75dea4d38eafb45.JPG', alt: '生活印象' }
+            { type: 'image', src: 'assets/images/folders/life/e4be8c7bcb24f4a536b3aa8c068f4614.JPG', alt: '生活记忆' }
         ]
     },
     hobby: {
@@ -113,6 +112,18 @@ const mediaData = {
             { type: 'video', src: 'assets/videos/folders/hobby/VID_20240920_234857.mp4', poster: 'assets/images/folders/hobby/IMG_20240913_223252.jpg', alt: '兴趣分享' }
         ]
     },
+    ai_application: {
+        title: "AI应用",
+        items: [
+            { type: 'image', src: 'assets/images/folders/research/0fd3da5cf286d00cfe72ac7decf7e41e.JPG', alt: 'AI工具' },
+            { type: 'image', src: 'assets/images/folders/research/670665443677ca7d265954952685b5c3.JPG', alt: '智能数据分析' },
+            { type: 'image', src: 'assets/images/folders/research/3ac2ad4d2b755edf8217f446432b3750.JPG', alt: 'AI辅助研究' },
+            { type: 'image', src: 'assets/images/folders/research/bf66f96b880ef2d9ad18277218bdcadf.JPG', alt: '智能创作' },
+            { type: 'image', src: 'assets/images/folders/research/IMG_20241116_171511.jpg', alt: 'AI应用场景' },
+            { type: 'image', src: 'assets/images/folders/research/IMG_20241120_221635.jpg', alt: '人工智能技术' }
+        ]
+    },
+    
     food: {
         title: "美食记录",
         items: [

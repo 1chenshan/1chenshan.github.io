@@ -494,6 +494,11 @@
     .carousel-container {
         height: 50vw;
     }
+    
+    /* AI页面响应式调整 */
+    .ai-cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 /* 手机端 */
@@ -527,6 +532,20 @@
         padding: 2vw 4vw;
         left: 15px;
         bottom: 15px;
+    }
+    
+    /* AI页面响应式调整 */
+    .ai-cards-grid {
+        grid-template-columns: 1fr;
+    }
+    .ai-card {
+        width: 100%;
+    }
+    .ai-page-title {
+        font-size: 24px;
+    }
+    .ai-page-description {
+        font-size: 16px;
     }
 }
 

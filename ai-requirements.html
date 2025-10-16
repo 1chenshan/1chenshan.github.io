@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的需求分析文档 - 珊珊的AI应用</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        .ai-page-container {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            background-color: rgba(248, 245, 242, 0.4);
+        }
+
+        .ai-page-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/backgrounds/aee6964a98bf11cb68b41fac266eebef.JPG') center/cover no-repeat;
+            opacity: 0.6;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ai-page-title {
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .ai-page-description {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .ai-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .ai-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-medium);
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .ai-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .ai-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .ai-card-icon {
+            font-size: 36px;
+            line-height: 1;
+        }
+
+        .ai-card-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .ai-card-description {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .ai-card-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--accent-rose) 0%, #F0C0D0 100%);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--radius-small);
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .ai-card-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .requirement-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 10px;
+        }
+
+        .requirement-tag {
+            background: rgba(165, 208, 200, 0.3);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            color: var(--text-primary);
+        }
+
+        .requirement-status {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-planning {
+            background: rgba(247, 200, 160, 0.3);
+            color: #B07030;
+        }
+
+        .status-inprogress {
+            background: rgba(165, 208, 200, 0.3);
+            color: #2A7D6B;
+        }
+
+        .status-completed {
+            background: rgba(144, 238, 144, 0.3);
+            color: #2E8B57;
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景容器 -->
+    <div class="background-container">
+        <div class="hero-image"></div>
+        <div class="grain-overlay"></div>
+    </div>
+    
+    <!-- 需求分析文档页面容器 -->
+    <div class="ai-page-container">
+        <h1 class="ai-page-title">我的需求分析文档</h1>
+        <p class="ai-page-description">这里收集了我正在规划和开发的AI项目需求文档，记录项目目标、功能规格和进度</p>
+        
+        <!-- 需求文档卡片网格 -->
+        <div class="ai-cards-grid">
+            <div class="ai-card" style="position: relative;">
+                <span class="requirement-status status-inprogress">进行中</span>
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">💄</div>
+                    <h3 class="ai-card-title">美妆售后AI模型训练</h3>
+                </div>
+                <p class="ai-card-description">开发一个智能美妆售后服务系统，能够自动分析客户问题，提取关键信息，并提供精准的解决方案。</p>
+                <div class="requirement-tags">
+                    <span class="requirement-tag">客户服务</span>
+                    <span class="requirement-tag">NLP</span>
+                    <span class="requirement-tag">美妆行业</span>
+                    <span class="requirement-tag">智能问答</span>
+                </div>
+                <a href="https://acn9u08jkn0o.feishu.cn/wiki/Pg3QwVC7jis5tPkrvWicKvGin1f?from=from_copylink" class="ai-card-link" target="_blank">查看需求文档</a>
+            </div>
+            
+            <div class="ai-card" style="position: relative;">
+                <span class="requirement-status status-planning">规划中</span>
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🔍</div>
+                    <h3 class="ai-card-title">物理图片理解AI训练项目</h3>
+                </div>
+                <p class="ai-card-description">构建一个智能图像识别系统，专注于物理学领域图片的理解与分析，提供精准的图像解读和数据提取功能。</p>
+                <div class="requirement-tags">
+                    <span class="requirement-tag">图像识别</span>
+                    <span class="requirement-tag">物理学</span>
+                    <span class="requirement-tag">计算机视觉</span>
+                    <span class="requirement-tag">深度学习</span>
+                </div>
+                <a href="https://acn9u08jkn0o.feishu.cn/wiki/ZBLuw1kk7ijg9RkY3kZcZVMinFe?from=from_copylink" class="ai-card-link" target="_blank">查看需求文档</a>
+            </div>
+            
+            <div class="ai-card" style="position: relative;">
+                <span class="requirement-status status-completed">已完成</span>
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">♻️</div>
+                    <h3 class="ai-card-title">电池回收行业湿法工艺模型优化</h3>
+                </div>
+                <p class="ai-card-description">利用机器学习算法优化电池回收湿法工艺参数，提高资源回收率并降低环境影响。</p>
+                <div class="requirement-tags">
+                    <span class="requirement-tag">电池回收</span>
+                    <span class="requirement-tag">湿法工艺</span>
+                    <span class="requirement-tag">机器学习</span>
+                    <span class="requirement-tag">工艺优化</span>
+                </div>
+                <a href="https://acn9u08jkn0o.feishu.cn/wiki/MFsbwahicipfzokJu7ScRjoSnhX?from=from_copylink" class="ai-card-link" target="_blank">查看需求文档</a>
+            </div>
+            
+            <div class="ai-card" style="position: relative;">
+                <span class="requirement-status status-inprogress">进行中</span>
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">📝</div>
+                    <h3 class="ai-card-title">智能论文写作助手</h3>
+                </div>
+                <p class="ai-card-description">开发一个AI辅助写作工具，帮助科研人员撰写高质量学术论文，提供语言润色、结构建议和引用管理。</p>
+                <div class="requirement-tags">
+                    <span class="requirement-tag">学术写作</span>
+                    <span class="requirement-tag">NLP</span>
+                    <span class="requirement-tag">文本生成</span>
+                    <span class="requirement-tag">引用管理</span>
+                </div>
+                <a href="https://docs.google.com/document/d/4stu789vwx012/edit" class="ai-card-link" target="_blank">查看需求文档</a>
+            </div>
+            
+            <div class="ai-card" style="position: relative;">
+                <span class="requirement-status status-planning">规划中</span>
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🔍</div>
+                    <h3 class="ai-card-title">研究趋势分析系统</h3>
+                </div>
+                <p class="ai-card-description">构建一个科研趋势分析平台，通过爬取和分析最新论文，识别研究热点和发展方向。</p>
+                <div class="requirement-tags">
+                    <span class="requirement-tag">趋势分析</span>
+                    <span class="requirement-tag">文本挖掘</span>
+                    <span class="requirement-tag">可视化</span>
+                    <span class="requirement-tag">预测模型</span>
+                </div>
+                <a href="https://docs.google.com/document/d/5xyz123abc456/edit" class="ai-card-link" target="_blank">查看需求文档</a>
+            </div>
+            
+            <div class="ai-card" style="position: relative;">
+                <span class="requirement-status status-planning">规划中</span>
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🧪</div>
+                    <h3 class="ai-card-title">实验室资源管理系统</h3>
+                </div>
+                <p class="ai-card-description">开发一个智能实验室管理系统，整合设备预约、试剂管理和实验记录功能，提高实验室资源利用效率。</p>
+                <div class="requirement-tags">
+                    <span class="requirement-tag">资源管理</span>
+                    <span class="requirement-tag">预约系统</span>
+                    <span class="requirement-tag">库存跟踪</span>
+                    <span class="requirement-tag">数据记录</span>
+                </div>
+                <a href="https://docs.google.com/document/d/6def789ghi012/edit" class="ai-card-link" target="_blank">查看需求文档</a>
+            </div>
+        </div>
+        
+        <!-- 回到首页按钮 -->
+        <a href="gallery.html" class="back-home-btn">
+            <span class="back-icon">←</span>
+            <span class="back-text">返回画廊</span>
+        </a>
+    </div>
+</body>
+</html>

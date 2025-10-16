@@ -74,6 +74,28 @@
                 </div>
             </div>
             
+            <div class="category-card has-submenu" onclick="event.stopPropagation()">
+                <div class="card-icon">🤖</div>
+                <div class="card-content">
+                    <h3 class="card-title">AI应用</h3>
+                    <p class="card-description">人工智能工具与应用，助力科研创新</p>
+                </div>
+                <div class="submenu">
+                    <a href="ai-agent.html" class="submenu-item">
+                        <span class="submenu-icon">🧠</span>
+                        <span>我的Agent</span>
+                    </a>
+                    <a href="ai-scripts.html" class="submenu-item">
+                        <span class="submenu-icon">📜</span>
+                        <span>我的脚本</span>
+                    </a>
+                    <a href="ai-requirements.html" class="submenu-item">
+                        <span class="submenu-icon">📋</span>
+                        <span>我的需求分析文档</span>
+                    </a>
+                </div>
+            </div>
+            
             <div class="category-card" onclick="openModal('life')">
                 <div class="card-icon">🌱</div>
                 <div class="card-content">
@@ -137,6 +159,20 @@
                 <div class="masonry-grid" id="masonryGrid">
                     <!-- 动态加载内容 -->
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox 弹窗 -->
+    <div class="lightbox-overlay" id="lightboxOverlay">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <div class="lightbox-media" id="lightboxMedia">
+                <!-- 动态加载内容 -->
+            </div>
+            <div class="lightbox-nav">
+                <button class="lightbox-prev" onclick="changeLightboxMedia(-1)">‹</button>
+                <button class="lightbox-next" onclick="changeLightboxMedia(1)">›</button>
             </div>
         </div>
     </div>

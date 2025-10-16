@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的脚本 - 珊珊的AI应用</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        .ai-page-container {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            background-color: rgba(248, 245, 242, 0.4);
+        }
+
+        .ai-page-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/backgrounds/aee6964a98bf11cb68b41fac266eebef.JPG') center/cover no-repeat;
+            opacity: 0.6;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ai-page-title {
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .ai-page-description {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .ai-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .ai-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-medium);
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .ai-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .ai-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .ai-card-icon {
+            font-size: 36px;
+            line-height: 1;
+        }
+
+        .ai-card-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .ai-card-description {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .ai-card-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--accent-orange) 0%, #FFD8B5 100%);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--radius-small);
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .ai-card-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+
+        .code-preview {
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: var(--radius-small);
+            padding: 15px;
+            margin-top: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .code-preview pre {
+            color: #f8f8f2;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+            overflow-x: auto;
+            max-height: 150px;
+        }
+
+        .code-preview-fade {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40px;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景容器 -->
+    <div class="background-container">
+        <div class="hero-image"></div>
+        <div class="grain-overlay"></div>
+    </div>
+    
+    <!-- AI脚本页面容器 -->
+    <div class="ai-page-container">
+        <h1 class="ai-page-title">我的脚本</h1>
+        <p class="ai-page-description">这里收集了我开发的各种AI辅助脚本，用于自动化科研工作流程和提高日常工作效率</p>
+        
+        <!-- 脚本卡片网格 -->
+        <div class="ai-cards-grid">
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🔄</div>
+                    <h3 class="ai-card-title">数据批处理脚本</h3>
+                </div>
+                <p class="ai-card-description">自动化处理大批量实验数据，支持格式转换、数据清洗和初步分析。</p>
+                <div class="code-preview">
+                    <pre>import pandas as pd
+import numpy as np
+
+def process_data_batch(input_dir, output_dir):
+    # 批量读取数据
+    files = glob.glob(f"{input_dir}/*.csv")
+    
+    for file in files:
+        # 读取数据
+        df = pd.read_csv(file)
+        
+        # 数据清洗和处理
+        df = clean_data(df)
+        
+        # 保存处理后的数据
+        output_file = os.path.join(output_dir, os.path.basename(file))
+        df.to_csv(output_file, index=False)
+        
+    print(f"处理完成，共处理{len(files)}个文件")</pre>
+                    <div class="code-preview-fade"></div>
+                </div>
+                <a href="https://github.com/1chenshan/research-scripts/data-batch-processor.py" class="ai-card-link" target="_blank">查看完整代码</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">📊</div>
+                    <h3 class="ai-card-title">可视化生成器</h3>
+                </div>
+                <p class="ai-card-description">一键生成高质量科研图表，支持多种可视化类型和自定义样式。</p>
+                <div class="code-preview">
+                    <pre>import matplotlib.pyplot as plt
+import seaborn as sns
+
+def generate_publication_plot(data, plot_type, save_path):
+    # 设置科研出版物风格
+    plt.style.use('seaborn-whitegrid')
+    sns.set_context("paper")
+    
+    fig, ax = plt.subplots(figsize=(8, 6))
+    
+    if plot_type == "scatter":
+        sns.scatterplot(data=data, x="x_var", y="y_var", 
+                       hue="category", size="value", ax=ax)
+    elif plot_type == "line":
+        sns.lineplot(data=data, x="x_var", y="y_var", 
+                    hue="category", style="category", ax=ax)
+                    
+    # 设置标题和标签
+    ax.set_title("Research Results", fontsize=16)
+    ax.set_xlabel("Variable X", fontsize=12)
+    ax.set_ylabel("Variable Y", fontsize=12)
+    
+    # 保存图表
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=300)</pre>
+                    <div class="code-preview-fade"></div>
+                </div>
+                <a href="https://github.com/1chenshan/research-scripts/visualization-generator.py" class="ai-card-link" target="_blank">查看完整代码</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">📑</div>
+                    <h3 class="ai-card-title">文献管理助手</h3>
+                </div>
+                <p class="ai-card-description">自动整理和分类下载的论文，提取元数据并生成引用格式。</p>
+                <div class="code-preview">
+                    <pre>import os
+import re
+import PyPDF2
+from scholarly import scholarly
+
+def extract_paper_metadata(pdf_path):
+    # 提取PDF文本
+    text = extract_text_from_pdf(pdf_path)
+    
+    # 尝试提取标题
+    title = extract_title(text)
+    
+    # 尝试提取作者
+    authors = extract_authors(text)
+    
+    # 使用Google Scholar API查询完整信息
+    query = scholarly.search_pubs(title)
+    publication = next(query)
+    
+    # 返回格式化的引用
+    return {
+        "title": publication.bib['title'],
+        "authors": publication.bib['author'],
+        "year": publication.bib['year'],
+        "journal": publication.bib.get('journal', ''),
+        "citation_apa": format_citation_apa(publication)
+    }</pre>
+                    <div class="code-preview-fade"></div>
+                </div>
+                <a href="https://github.com/1chenshan/research-scripts/literature-manager.py" class="ai-card-link" target="_blank">查看完整代码</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🤖</div>
+                    <h3 class="ai-card-title">AI模型训练自动化</h3>
+                </div>
+                <p class="ai-card-description">简化机器学习模型训练流程，自动执行数据准备、训练和评估。</p>
+                <div class="code-preview">
+                    <pre>import tensorflow as tf
+from sklearn.model_selection import train_test_split
+import mlflow
+
+def train_model_pipeline(data_path, model_config, save_dir):
+    # 加载数据
+    data = load_dataset(data_path)
+    
+    # 数据预处理
+    X, y = preprocess_data(data)
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=0.2, random_state=42)
+    
+    # 构建模型
+    model = build_model(model_config)
+    
+    # 启动MLflow跟踪
+    mlflow.start_run()
+    mlflow.log_params(model_config)
+    
+    # 训练模型
+    history = model.fit(
+        X_train, y_train,
+        epochs=model_config['epochs'],
+        batch_size=model_config['batch_size'],
+        validation_split=0.1,
+        callbacks=[tf.keras.callbacks.EarlyStopping(patience=5)]
+    )
+    
+    # 评估模型
+    results = model.evaluate(X_test, y_test)
+    
+    # 记录指标
+    mlflow.log_metrics({
+        "test_loss": results[0],
+        "test_accuracy": results[1]
+    })
+    
+    # 保存模型
+    model.save(os.path.join(save_dir, "model.h5"))
+    mlflow.end_run()</pre>
+                    <div class="code-preview-fade"></div>
+                </div>
+                <a href="https://github.com/1chenshan/research-scripts/ai-training-automation.py" class="ai-card-link" target="_blank">查看完整代码</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">📈</div>
+                    <h3 class="ai-card-title">实验结果分析器</h3>
+                </div>
+                <p class="ai-card-description">自动分析实验结果，执行统计测试并生成报告。</p>
+                <div class="code-preview">
+                    <pre>import pandas as pd
+import numpy as np
+import scipy.stats as stats
+from reportlab.lib import colors
+from reportlab.lib.pagesizes import letter
+from reportlab.platypus import SimpleDocTemplate, Table, TableStyle
+
+def analyze_experiment_results(results_file, output_pdf):
+    # 读取实验结果
+    df = pd.read_csv(results_file)
+    
+    # 基本统计分析
+    stats_summary = df.groupby('treatment').agg({
+        'response': ['mean', 'std', 'min', 'max', 'count']
+    })
+    
+    # 执行统计测试
+    groups = [df[df['treatment'] == t]['response'] for t in df['treatment'].unique()]
+    f_stat, p_value = stats.f_oneway(*groups)
+    
+    # 多重比较
+    tukey_results = stats.tukey_hsd(*groups)
+    
+    # 生成PDF报告
+    doc = SimpleDocTemplate(output_pdf, pagesize=letter)
+    elements = []
+    
+    # 添加表格
+    data = [['Treatment', 'Mean', 'Std Dev', 'Min', 'Max', 'Count']]
+    for idx, row in stats_summary.iterrows():
+        data.append([idx] + list(row['response']))
+    
+    # 添加ANOVA结果
+    data.append(['ANOVA F-statistic', f_stat, '', '', '', ''])
+    data.append(['ANOVA p-value', p_value, '', '', '', ''])
+    
+    # 创建表格
+    t = Table(data)
+    t.setStyle(TableStyle([
+        ('BACKGROUND', (0, 0), (-1, 0), colors.grey),
+        ('TEXTCOLOR', (0, 0), (-1, 0), colors.whitesmoke),
+        ('ALIGN', (0, 0), (-1, -1), 'CENTER'),
+        ('FONTNAME', (0, 0), (-1, 0), 'Helvetica-Bold'),
+        ('BOTTOMPADDING', (0, 0), (-1, 0), 12),
+        ('GRID', (0, 0), (-1, -1), 1, colors.black)
+    ]))
+    
+    elements.append(t)
+    doc.build(elements)</pre>
+                    <div class="code-preview-fade"></div>
+                </div>
+                <a href="https://github.com/1chenshan/research-scripts/experiment-analyzer.py" class="ai-card-link" target="_blank">查看完整代码</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🔍</div>
+                    <h3 class="ai-card-title">文献爬虫</h3>
+                </div>
+                <p class="ai-card-description">自动从学术数据库搜索和下载相关文献。</p>
+                <div class="code-preview">
+                    <pre>import requests
+from bs4 import BeautifulSoup
+import scholarly
+import time
+import os
+
+def search_and_download_papers(keywords, num_papers=10, save_dir='papers'):
+    # 确保保存目录存在
+    os.makedirs(save_dir, exist_ok=True)
+    
+    # 使用scholarly搜索Google Scholar
+    search_query = scholarly.search_pubs(' '.join(keywords))
+    
+    papers = []
+    for i in range(num_papers):
+        try:
+            paper = next(search_query)
+            papers.append(paper)
+        except StopIteration:
+            break
+    
+    # 尝试下载论文
+    for paper in papers:
+        title = paper.bib['title']
+        print(f"尝试下载: {title}")
+        
+        # 尝试从Sci-Hub获取PDF
+        pdf_url = search_scihub(title)
+        if pdf_url:
+            download_pdf(pdf_url, os.path.join(save_dir, f"{clean_filename(title)}.pdf"))
+            print(f"成功下载: {title}")
+        else:
+            print(f"无法找到PDF: {title}")
+        
+        # 避免请求过于频繁
+        time.sleep(2)</pre>
+                    <div class="code-preview-fade"></div>
+                </div>
+                <a href="https://github.com/1chenshan/research-scripts/literature-crawler.py" class="ai-card-link" target="_blank">查看完整代码</a>
+            </div>
+        </div>
+        
+        <!-- 回到首页按钮 -->
+        <a href="gallery.html" class="back-home-btn">
+            <span class="back-icon">←</span>
+            <span class="back-text">返回画廊</span>
+        </a>
+    </div>
+</body>
+</html>

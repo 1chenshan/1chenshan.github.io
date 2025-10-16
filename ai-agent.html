@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的Agent - 珊珊的AI应用</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <style>
+        .ai-page-container {
+            min-height: 100vh;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            background-color: rgba(248, 245, 242, 0.4);
+        }
+
+        .ai-page-container::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('assets/images/backgrounds/aee6964a98bf11cb68b41fac266eebef.JPG') center/cover no-repeat;
+            opacity: 0.6;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ai-page-title {
+            font-size: 32px;
+            font-weight: 400;
+            text-align: center;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .ai-page-description {
+            max-width: 800px;
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--text-secondary);
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .ai-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .ai-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border-radius: var(--radius-medium);
+            padding: 25px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-light);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .ai-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-medium);
+        }
+
+        .ai-card-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+        }
+
+        .ai-card-icon {
+            font-size: 36px;
+            line-height: 1;
+        }
+
+        .ai-card-title {
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .ai-card-description {
+            color: var(--text-secondary);
+            font-size: 16px;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+
+        .ai-card-link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--accent-mint) 0%, #B9DDD3 100%);
+            color: var(--text-primary);
+            text-decoration: none;
+            border-radius: var(--radius-small);
+            font-weight: 500;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .ai-card-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- 背景容器 -->
+    <div class="background-container">
+        <div class="hero-image"></div>
+        <div class="grain-overlay"></div>
+    </div>
+    
+    <!-- AI Agent页面容器 -->
+    <div class="ai-page-container">
+        <h1 class="ai-page-title">我的Agent</h1>
+        <p class="ai-page-description">这里收集了我开发和使用的各种AI智能助手，帮助我在科研和日常工作中提高效率</p>
+        
+        <!-- Agent卡片网格 -->
+        <div class="ai-cards-grid">
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">📊</div>
+                    <h3 class="ai-card-title">数据质检助手</h3>
+                </div>
+                <p class="ai-card-description">专门用于处理科研数据的智能助手，支持数据清洗、质量检查和统计分析，适用于大规模数据集处理。</p>
+                <a href="https://www.coze.cn/space/7552454484924923939/bot/7561457130466033702" class="ai-card-link" target="_blank">访问Agent</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">📝</div>
+                    <h3 class="ai-card-title">文章写作助手</h3>
+                </div>
+                <p class="ai-card-description">帮助科研人员撰写高质量学术论文的AI助手，提供结构建议、语言润色和参考文献格式化。</p>
+                <a href="https://www.coze.cn/space/7552454484924923939/project-ide/7555912806240616482" class="ai-card-link" target="_blank">访问Agent</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🔍</div>
+                    <h3 class="ai-card-title">长内容提炼问答</h3>
+                </div>
+                <p class="ai-card-description">专注于帮助研究者快速梳理长文本内容、提取关键信息并生成问答摘要的智能助手。</p>
+                <a href="https://www.coze.cn/work_flow?workflow_id=7561466032121675776&space_id=7552454484924923939" class="ai-card-link" target="_blank">访问Agent</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">💻</div>
+                    <h3 class="ai-card-title">代码调试助手</h3>
+                </div>
+                <p class="ai-card-description">帮助解决编程问题、优化代码性能并提供最佳实践建议的AI编程助手。</p>
+                <a href="https://chat.openai.com/g/g-HgZuFuuBK-code-helper" class="ai-card-link" target="_blank">访问Agent</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">🧪</div>
+                    <h3 class="ai-card-title">实验设计Agent</h3>
+                </div>
+                <p class="ai-card-description">协助科研人员设计实验方案、优化实验流程和分析实验结果的专业助手。</p>
+                <a href="https://chat.openai.com/g/g-HgZuFuuBK-experiment-designer" class="ai-card-link" target="_blank">访问Agent</a>
+            </div>
+            
+            <div class="ai-card">
+                <div class="ai-card-header">
+                    <div class="ai-card-icon">📅</div>
+                    <h3 class="ai-card-title">科研项目管理助手</h3>
+                </div>
+                <p class="ai-card-description">帮助管理科研项目进度、分配任务和追踪目标完成情况的智能项目管理助手。</p>
+                <a href="https://chat.openai.com/g/g-HgZuFuuBK-research-project-manager" class="ai-card-link" target="_blank">访问Agent</a>
+            </div>
+        </div>
+        
+        <!-- 回到首页按钮 -->
+        <a href="gallery.html" class="back-home-btn">
+            <span class="back-icon">←</span>
+            <span class="back-text">返回画廊</span>
+        </a>
+    </div>
+</body>
+</html>
